@@ -4,7 +4,7 @@ import os
 path = 'C:/Users/Yash Shinge/Desktop/BST/'
 os.chdir(path)
 
-for i in range(1,6):
+for i in range(1,9):
 	size = 10**i
 	rand = random.sample(range(1,size), size - 1)
 
