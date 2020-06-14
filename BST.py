@@ -101,8 +101,7 @@ class BST:
 import os
 import csv
 import datetime
-path = 'C:/Users/Yash Shinge/Desktop/BST/'
-
+path = os.getcwd()
 os.chdir(path)
 filenames = [f'rand{10**i}.csv' for i in range(1,2)]
 times = []
