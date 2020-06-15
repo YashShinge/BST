@@ -106,24 +106,17 @@ from numpy import genfromtxt
 path = os.getcwd()
 os.chdir(path)
 
-# filenames = [f'rand_10_power_{i}.csv' for i in range(7,8)]
+for j in range(1,8):
 
-# file = filenames[]
+    row1 = genfromtxt(f'rand_test_10_pow_{j}.csv', delimiter=',')
+    rand = [int(x) for x in row1]
 
-# times = []
-# for i in range(len(filenames)):
-
-
-row1 = genfromtxt('rand_test_10_pow_2.csv', delimiter=',')
-
-rand = [int(i) for i in row1]
-
-t = BST()
-a = datetime.datetime.now()
-for i in rand:
-    t.insert(i)
-b = datetime.datetime.now() 
-c = b - a
-
-print('Time: ',c.microseconds)
-print('Height: ', t.get_height())
+    t = BST()
+    a = datetime.datetime.now()
+    for i in rand:
+        t.insert(i)
+    b = datetime.datetime.now() 
+    c = b - a
+    print(f'For 10 power {j}')
+    print('Time: ', c.microseconds)
+    print('Height: ', t.get_height(), '\n')
