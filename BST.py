@@ -58,13 +58,13 @@ class Node:
 
 class BST:
     def __init__(self):
-        self.root = None
+        self.root = Node(0)
 
     def insert(self, value):
         if self.root:
             return self.root.insert(value)
-        else:
-            self.root = Node(value)
+        # else:
+        #     self.root = Node(value)
 
     def print_all(self):
         self.root.print_all()
@@ -101,22 +101,28 @@ class BST:
 import os
 import csv
 import datetime
+
 path = os.getcwd()
 os.chdir(path)
-filenames = [f'rand{10**i}.csv' for i in range(1,2)]
-times = []
+
+# filenames = [f'rand_10_power_{i}.csv' for i in range(7,8)]
+
+# file = filenames[]
+
+# times = []
 # for i in range(len(filenames)):
-with open(filenames[0], newline='') as f:
+with open('rand_10_power_3.csv', newline='') as f:
     reader = csv.reader(f)
     row1 = next(reader)
 
 rand = [int(i) for i in row1]
-print(rand[:5])
+
 t = BST()
 a = datetime.datetime.now()
 for i in rand:
     t.insert(i)
-b = datetime.datetime.now() -a
+b = datetime.datetime.now() 
+c = b - a
 
-times.append(b.microseconds)
-print(b.microseconds)
+print('Time: ',c.microseconds)
+print('Height: ', t.get_height())
