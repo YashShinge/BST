@@ -99,8 +99,9 @@ class BST:
 
 
 import os
-import csv
 import datetime
+from numpy import genfromtxt
+
 
 path = os.getcwd()
 os.chdir(path)
@@ -112,17 +113,11 @@ os.chdir(path)
 # times = []
 # for i in range(len(filenames)):
 
-from numpy import genfromtxt
 
 row1 = genfromtxt('rand_test_10_pow_2.csv', delimiter=',')
 
-
-# with open('rand_test_10_pow_2.csv', newline='') as f:
-#     reader = csv.reader(f)
-#     row1 = next(reader)
-
 rand = [int(i) for i in row1]
-print(rand)
+
 t = BST()
 a = datetime.datetime.now()
 for i in rand:

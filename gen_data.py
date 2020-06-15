@@ -1,9 +1,8 @@
 import random
 from numpy import savetxt
 
-size = 10**2
-rand = random.sample(range(1,size), size - 1)
-print('done')
+for i in range(1,8):
+	size = 10**i
+	rand = random.sample(range(1,size), size - 1)
 
-savetxt("rand_test_10_pow_3.csv", rand, delimiter=",", fmt='%s')
-
+	savetxt(f"rand_test_10_pow_{i}.csv", rand, delimiter=",", fmt='%s')
