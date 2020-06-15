@@ -99,7 +99,7 @@ class BST:
 
 
 import os
-import datetime
+import time
 from numpy import genfromtxt
 
 
@@ -107,16 +107,16 @@ path = os.getcwd()
 os.chdir(path)
 
 for j in range(1,8):
-
     row1 = genfromtxt(f'rand_test_10_pow_{j}.csv', delimiter=',')
     rand = [int(x) for x in row1]
 
     t = BST()
-    a = datetime.datetime.now()
+    a = time.time()
     for i in rand:
         t.insert(i)
-    b = datetime.datetime.now() 
+    b = time.time() 
     c = b - a
     print(f'For 10 power {j}')
-    print('Time: ', c.microseconds)
+    print('Time: ', c*(10**6))
     print('Height: ', t.get_height(), '\n')
+
