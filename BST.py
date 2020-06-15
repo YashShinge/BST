@@ -111,12 +111,18 @@ os.chdir(path)
 
 # times = []
 # for i in range(len(filenames)):
-with open('rand_10_power_3.csv', newline='') as f:
-    reader = csv.reader(f)
-    row1 = next(reader)
+
+from numpy import genfromtxt
+
+row1 = genfromtxt('rand_test_10_pow_2.csv', delimiter=',')
+
+
+# with open('rand_test_10_pow_2.csv', newline='') as f:
+#     reader = csv.reader(f)
+#     row1 = next(reader)
 
 rand = [int(i) for i in row1]
-
+print(rand)
 t = BST()
 a = datetime.datetime.now()
 for i in rand:

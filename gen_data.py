@@ -1,16 +1,9 @@
 import random
-import csv
+from numpy import savetxt
 
-size = 10**8
+size = 10**2
 rand = random.sample(range(1,size), size - 1)
 print('done')
 
+savetxt("rand_test_10_pow_3.csv", rand, delimiter=",", fmt='%s')
 
-# for i in range(8, 10):
-# 	size = 10**i
-# 	rand = random.sample(range(1,size), size - 1)
-# 	print('done')
-# 	with open(f'rand_10_power_{i}.csv', 'w') as myfile:
-# 	    wr = csv.writer(myfile, quoting=csv.QUOTE_ALL)
-# 	    wr.writerow(rand)
-# 	print(f'Done {i}')
