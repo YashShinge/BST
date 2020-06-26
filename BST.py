@@ -58,13 +58,13 @@ class Node:
 
 class BST:
     def __init__(self):
-        self.root = Node(0)
+        self.root = None
 
     def insert(self, value):
         if self.root:
             return self.root.insert(value)
-        # else:
-        #     self.root = Node(value)
+        else:
+            self.root = Node(value)
 
     def print_all(self):
         self.root.print_all()
@@ -99,14 +99,14 @@ class BST:
 
 
 rand = []
-with open('rand_test_100_mn.csv', 'r') as f:
+with open('rand_test_2.csv', 'r') as f:
     print('Loading file...')
     for row in f:
         rand.append(int(row.rstrip()))
     print('File loaded.\n')
 
 
-for j in range(8, 9):
+for j in range(1, 2):
 
     t = BST()
     a = time.time()
@@ -114,6 +114,8 @@ for j in range(8, 9):
         t.insert(i)
     b = time.time()
     c = b - a
+
     print(f'For 10 power {j}')
     print('Time: ', c*(10**6))
     print('Height: ', t.get_height(), '\n')
+
